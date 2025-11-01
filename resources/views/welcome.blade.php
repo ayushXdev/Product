@@ -22,7 +22,7 @@ style="margin: 20px auto; border-collapse: collapse; text-align: center; width: 
    <tbody>
   @foreach($products as $product)
     <tr>
-      <th scope="row">{{$product->id}}</th>
+      <th scope="row">{{$loop->iteration + ($products->currentPage() - 1) * $products->perPage() }}</th>
       <td>{{$product->product_name}}</td>
       <td>{{$product->description}}</td>
     </tr>
